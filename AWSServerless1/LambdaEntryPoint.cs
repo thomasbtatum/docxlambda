@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Amazon.Lambda.AspNetCoreServer;
 
 namespace AWSServerless1
 {
@@ -23,6 +24,9 @@ namespace AWSServerless1
         /// <param name="builder"></param>
         protected override void Init(IWebHostBuilder builder)
         {
+
+            //RegisterResponseContentEncodingForContentType("application/octet-stream", ResponseContentEncoding.Default);
+
             builder
                 .UseStartup<Startup>();
         }
